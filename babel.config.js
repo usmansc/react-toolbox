@@ -5,6 +5,7 @@ module.exports = function (api) {
   return {
     presets: ['@babel/preset-env', '@babel/preset-react'],
     plugins: [
+      '@babel/plugin-syntax-jsx',
       '@babel/plugin-transform-runtime',
       // Stage 0
       '@babel/plugin-proposal-function-bind',

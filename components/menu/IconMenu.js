@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { themr } from 'react-css-themr';
@@ -7,32 +7,99 @@ import InjectIconButton from '../button/IconButton';
 import InjectMenu from './Menu';
 
 const factory = (IconButton, Menu) => {
-  class IconMenu extends Component {
-    static propTypes = {
-      active: PropTypes.bool,
-      children: PropTypes.node,
-      className: PropTypes.string,
-      icon: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.element,
-      ]),
-      iconRipple: PropTypes.bool,
-      inverse: PropTypes.bool,
-      menuRipple: PropTypes.bool,
-      onClick: PropTypes.func,
-      onHide: PropTypes.func,
-      onSelect: PropTypes.func,
-      onShow: PropTypes.func,
-      position: PropTypes.string,
-      selectable: PropTypes.bool,
-      selected: PropTypes.node,
+  const IconMenu = ({
+    active: activeProp,
+    children,
+    className,
+    icon,
+    iconRipple,
+    inverse,
+    menuRipple,
+    onClick,
+    onHide,
+    onSelect,
+    onShow,
+    position,
+    selectable,
+    selected,
+    theme,
+    ...other
+  }) => {
+    const [active, setActive] = useState(activeProp);
+    const [prevActiveProp, setPrevActiveProp] = useState(activeProp);
+
+    useEffect(() => {
+      setPrevActiveProp(activeProp);
+    }, [activeProp]);
+
+    useEffect(() => {
+      if (prevActiveProp !== activeProp) {
+        setActive(activeProp);
+      }
+    }, [activeProp, prevActiveProp]);
+
+    const handleButtonClick = (event) => {
+      event.stopPropagation();
+      setActive(true);
+      if (onClick) onClick(event);
+    };
+
+    const handleMenuHide = () => {
+      setActive(false);
+      if (onHide) onHide();
+    }
+
+    return (
+      <div {...other} className={classnames(theme.iconMenu, className)}>
+        <InjectIconButton
+          className={theme.icon}
+          icon={icon}
+          inverse={inverse}
+          onClick={handleButtonClick}
+          ripple={iconRipple}
+        />
+        <InjectMenu
+          active={active}
+          onHide={handleMenuHide}
+          onSelect={onSelect}
+          onShow={onShow}
+          position={position}
+          ripple={menuRipple}
+          selectable={selectable}
+          selected={selected}
+          theme={theme}
+        >
+          {children}
+        </InjectMenu>
+      </div>
+    );
+  };
+
+  IconMenu.propTypes = {
+    active: PropTypes.bool,
+    children: PropTypes.node,
+    className: PropTypes.string,
+    icon: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element,
+    ]),
+    iconRipple: PropTypes.bool,
+    inverse: PropTypes.bool,
+    menuRipple: PropTypes.bool,
+    onClick: PropTypes.func,
+    onHide: PropTypes.func,
+    onSelect: PropTypes.func,
+    onShow: PropTypes.func,
+    position: PropTypes.string,
+    selectable: PropTypes.bool,
+    selected: PropTypes.node,
       theme: PropTypes.shape({
         icon: PropTypes.string,
         iconMenu: PropTypes.string,
       }),
     };
 
-    static defaultProps = {
+    IconMenu.defaultProps = {
       active: false,
       className: '',
       icon: 'more_vert',
@@ -41,58 +108,6 @@ const factory = (IconButton, Menu) => {
       position: 'auto',
       selectable: false,
     };
-
-    state = {
-      active: this.props.active,
-    }
-
-    componentWillReceiveProps(nextProps) {
-      if (this.state.active !== nextProps.active) {
-        this.setState({ active: nextProps.active });
-      }
-    }
-
-    handleButtonClick = (event) => {
-      this.setState(state => ({ active: !state.active }));
-      if (this.props.onClick) this.props.onClick(event);
-    };
-
-    handleMenuHide = () => {
-      this.setState({ active: false });
-      if (this.props.onHide) this.props.onHide();
-    }
-
-    render() {
-      const {
-        active, children, className, icon, iconRipple, inverse, menuRipple, onHide, // eslint-disable-line
-        onSelect, onShow, position, selectable, selected, theme, ...other
-      } = this.props;
-      return (
-        <div {...other} className={classnames(theme.iconMenu, className)}>
-          <IconButton
-            className={theme.icon}
-            icon={icon}
-            inverse={inverse}
-            onClick={this.handleButtonClick}
-            ripple={iconRipple}
-          />
-          <Menu
-            active={this.state.active}
-            onHide={this.handleMenuHide}
-            onSelect={onSelect}
-            onShow={onShow}
-            position={position}
-            ripple={menuRipple}
-            selectable={selectable}
-            selected={selected}
-            theme={theme}
-          >
-            {children}
-          </Menu>
-        </div>
-      );
-    }
-  }
 
   return IconMenu;
 };

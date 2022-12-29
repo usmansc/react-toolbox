@@ -61,8 +61,8 @@
   "peerDependencies": {
     "classnames": "^2.2.0",
     "prop-types": "^15.6.0",
-    "react": "^15.5.0 || ^16.0.0",
-    "react-dom": "^15.5.0 || ^16.0.0",
+    "react": "^15.5.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^15.5.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
     "react-transition-group": "^2.5.0"
   },
   "devDependencies": {
@@ -135,8 +135,8 @@
     "pre-commit": "^1.2.2",
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^18.2",
+    "react-dom": "^18.2",
     "react-hot-loader": "^4.3.11",
     "react-test-renderer": "^16.5.2",
     "rimraf": "^2.6.2",

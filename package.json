@@ -43,6 +43,7 @@
     "prebuild": "npm run clean",
     "prepare": "npm run build",
     "release": "bumped release",
+    "postinstall": "npm run build",
     "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
     "test": "jest",
     "test:watch": "jest --watch --no-watchman",

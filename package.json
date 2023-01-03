@@ -1,9 +1,9 @@
 {
-  "name": "react-toolbox",
+  "name": "react-toolbox-usmansc",
   "description": "A set of React components implementing Google's Material Design specification with the power of CSS Modules.",
   "homepage": "http://react-toolbox.io/",
   "license": "MIT",
-  "version": "2.0.0-beta.13",
+  "version": "2.0.12",
   "main": "./lib",
   "module": "./components",
   "typings": "./index.d.ts",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-toolbox/react-toolbox.git"
+    "url": "git+https://github.com/usmansc/react-toolbox"
   },
   "bugs": {
     "email": "issues@react-toolbox.io",
@@ -43,7 +43,6 @@
     "prebuild": "npm run clean",
     "prepare": "npm run build",
     "release": "bumped release",
-    "postinstall": "npm run build",
     "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
     "test": "jest",
     "test:watch": "jest --watch --no-watchman",
@@ -135,7 +134,7 @@
     "postcss-reporter": "^6.0.0",
     "pre-commit": "^1.2.2",
     "prop-types": "^15.6.2",
-    "ramda": "^0.25.0",
+    "ramda": "^0.28.0",
     "react": "^18.2",
     "react-dom": "^18.2",
     "react-hot-loader": "^4.3.11",

@@ -59,7 +59,7 @@ const factory = (Dialog) => {
       onClick: this.handleSelect,
     }];
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
       if (nextProps.value.getTime() !== this.state.displayTime.getTime()) {
         this.setState({ displayTime: new Date(nextProps.value.getTime()) });
       }

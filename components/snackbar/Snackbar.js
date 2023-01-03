@@ -39,7 +39,7 @@ const factory = (Button) => {
       }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
       if (nextProps.active && nextProps.timeout) {
         this.scheduleTimeout(nextProps);
       }

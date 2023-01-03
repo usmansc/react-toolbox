@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const ActivableRendererFactory = (options = { delay: 500 }) => ActivableComponent => class ActivableRenderer extends Component { // eslint-disable-line max-len
+const ActivableRendererFactory = (options = { delay: 500 }) => ActivableComponent => (class ActivableRenderer extends Component { // eslint-disable-line max-len
     static propTypes = {
       active: PropTypes.bool.isRequired,
       children: PropTypes.node,
@@ -17,7 +17,7 @@ const ActivableRendererFactory = (options = { delay: 500 }) => ActivableComponen
       rendered: this.props.active,
     };
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
       if (nextProps.active && !this.props.active) this.renderAndActivate();
       if (!nextProps.active && this.props.active) this.deactivateAndUnrender();
     }
@@ -50,6 +50,6 @@ const ActivableRendererFactory = (options = { delay: 500 }) => ActivableComponen
         ? <ActivableComponent {...others} active={active} />
         : null;
     }
-};
+});
 
 export default ActivableRendererFactory;

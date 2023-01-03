@@ -10,7 +10,7 @@ const initialState = {
 class ProgressBarTest extends React.Component {
   state = initialState;
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.simulateProgress();
   }
 

@@ -162,7 +162,7 @@ Check for each component what key to use. Then, when you have a theme object ful
 ```js
 import React from 'react';
 import { render } from 'react-dom';
-import { ThemeProvider } from 'react-css-themr';
+import { ThemeProvider } from 'react-css-themr-usmansc';
 import theme from './theme/theme.js';
 import App from './App.js';
 

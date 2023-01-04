@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { TABLE } from '../identifiers';
 import { Checkbox } from '../checkbox';
 import { FontIcon } from '../font_icon';

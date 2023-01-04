@@ -54,7 +54,7 @@
     "@types/prop-types": "^15.5.6",
     "classnames": "^2.2.6",
     "core-js": "^2.5.7",
-    "react-css-themr": "^2.1.2",
+    "react-css-themr-usmansc": "^2.1.21",
     "react-style-proptype": "^3.2.2",
     "react-transition-group": "^2.5.0"
   },

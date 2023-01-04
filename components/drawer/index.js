@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { DRAWER } from '../identifiers';
 import { Overlay } from '../overlay';
 import { drawerFactory } from './Drawer';

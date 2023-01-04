@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { AVATAR } from '../identifiers';
 import { avatarFactory } from './Avatar';
 import { FontIcon } from '../font_icon/FontIcon';

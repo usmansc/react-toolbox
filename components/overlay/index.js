@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { OVERLAY } from '../identifiers';
 import { Overlay } from './Overlay';
 import theme from './theme.module.css';

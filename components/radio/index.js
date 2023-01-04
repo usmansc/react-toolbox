@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { RADIO } from '../identifiers';
 import themedRippleFactory from '../ripple';
 import radioFactory from './Radio';

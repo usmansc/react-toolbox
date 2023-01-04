@@ -203,7 +203,7 @@ Wrap your component tree with ThemeProvider at the desired level in your compone
 
 ```js
 import React from 'react';
-import { ThemeProvider } from 'react-css-themr';
+import { ThemeProvider } from 'react-css-themr-usmansc';
 import theme from './theme';
 
 class App extends React.Component {

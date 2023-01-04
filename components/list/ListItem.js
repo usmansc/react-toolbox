@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { LIST } from '../identifiers';
 import InjectListItemContent from './ListItemContent';
 import InjectListItemLayout from './ListItemLayout';

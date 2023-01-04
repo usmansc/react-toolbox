@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { LAYOUT } from '../identifiers';
 import { layoutFactory } from './Layout';
 import { sidebarFactory } from './Sidebar';

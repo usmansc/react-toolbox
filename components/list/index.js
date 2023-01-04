@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { LIST } from '../identifiers';
 import { Avatar } from '../avatar';
 import { Checkbox } from '../checkbox';

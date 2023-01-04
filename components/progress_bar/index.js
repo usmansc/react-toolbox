@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { PROGRESS_BAR } from '../identifiers';
 import { ProgressBar } from './ProgressBar';
 import theme from './theme.module.css';

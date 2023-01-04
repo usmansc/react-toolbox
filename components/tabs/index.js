@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { TABS } from '../identifiers';
 import { tabsFactory } from './Tabs';
 import { TabContent } from './TabContent';

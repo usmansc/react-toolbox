@@ -1,4 +1,4 @@
-import { themr } from 'react-css-themr';
+import { themr } from 'react-css-themr-usmansc';
 import { MENU } from '../identifiers';
 import { IconButton } from '../button';
 import { MenuDivider } from './MenuDivider';

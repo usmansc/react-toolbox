@@ -3,7 +3,7 @@
   "description": "A set of React components implementing Google's Material Design specification with the power of CSS Modules.",
   "homepage": "http://react-toolbox.io/",
   "license": "MIT",
-  "version": "2.0.12",
+  "version": "2.0.14",
   "main": "./lib",
   "module": "./components",
   "typings": "./index.d.ts",
